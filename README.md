@@ -6,6 +6,8 @@ WizTree, TreeSize and WinDirStat answer "what's big?". DiskVerdict also answers 
 
 Zero dependencies. Node.js stdlib only. No installer, no admin rights, no telemetry.
 
+![DiskVerdict after scanning a full C: drive](docs/screenshot.jpg)
+
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │  TARANAN   986 GB      GEREKSİZ  2.2 GB     TEMİZLİK FIRSATI  44 │
