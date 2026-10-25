@@ -1,0 +1,22 @@
+{
+  "name": "diskverdict",
+  "version": "1.0.0",
+  "description": "Windows disk analyzer that classifies every folder as keep, move, partly removable, junk or unknown — with a reason.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node server.js --selftest"
+  },
+  "keywords": [
+    "disk",
+    "disk-usage",
+    "cleanup",
+    "windows",
+    "storage",
+    "analyzer"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
