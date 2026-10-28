@@ -1,0 +1,11 @@
+{
+  "main": "server.js",
+  "output": "build/sea-prep.blob",
+  "disableExperimentalSEAWarning": true,
+  "assets": {
+    "index.html": "public/index.html",
+    "style.css": "public/style.css",
+    "app.js": "public/app.js",
+    "recycle.ps1": "tools/recycle.ps1"
+  }
+}

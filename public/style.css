@@ -87,6 +87,23 @@ html, body {
 .drive:hover { color: var(--text); background: var(--panel2); }
 .drive.active { background: linear-gradient(135deg, rgba(56,189,248,.22), rgba(34,211,238,.14)); color: #cdefff; box-shadow: inset 0 0 0 1px rgba(56,189,248,.35); }
 
+.langs { display: flex; gap: 2px; background: var(--panel); border: 1px solid var(--line); padding: 3px; border-radius: 10px; }
+.lang {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: .15s;
+}
+.lang:hover { color: var(--text); background: var(--panel2); }
+.lang.active { background: rgba(56,189,248,.16); color: #cdefff; box-shadow: inset 0 0 0 1px rgba(56,189,248,.35); }
+
 /* ---------- buttons ---------- */
 .btn {
   font: inherit;

@@ -14,103 +14,107 @@
       <div class="logo">◈</div>
       <div>
         <h1>DiskVerdict</h1>
-        <p class="sub">Diski ne dolduruyor? Tara, gör, güvenle temizle.</p>
+        <p class="sub" data-i18n="sub">Diski ne dolduruyor? Tara, gör, güvenle temizle.</p>
       </div>
     </div>
     <div class="controls">
       <div class="drives" id="drives"></div>
-      <button class="btn primary" id="scanBtn">Taramayı Başlat</button>
-      <button class="btn ghost" id="closeBtn" title="Uygulamayı kapat">Kapat</button>
+      <div class="langs" role="group" aria-label="Dil / Language">
+        <button class="lang" data-lang="tr">TR</button>
+        <button class="lang" data-lang="en">EN</button>
+      </div>
+      <button class="btn primary" id="scanBtn" data-i18n="scan">Taramayı Başlat</button>
+      <button class="btn ghost" id="closeBtn" data-i18n="close" data-i18n-title="closeTip" title="Uygulamayı kapat">Kapat</button>
     </div>
   </header>
 
   <section class="progress" id="progress" hidden>
     <div class="bar"><div class="fill" id="pFill"></div></div>
     <div class="plabels">
-      <span id="pPhase">Dizinler taranıyor…</span>
+      <span id="pPhase" data-i18n="walk">Dizinler taranıyor…</span>
       <span id="pStats">0 dizin</span>
     </div>
   </section>
 
   <section class="stats" id="stats" hidden>
-    <div class="stat"><span class="k">Taranan</span><b id="sTotal">—</b><span class="e" id="sTotalSub"></span></div>
-    <div class="stat bad"><span class="k">Gereksiz</span><b id="sBad">—</b><span class="e" id="sBadSub"></span></div>
-    <div class="stat warn"><span class="k">Kısmen</span><b id="sWarn">—</b><span class="e" id="sWarnSub"></span></div>
-    <div class="stat move"><span class="k">Taşınabilir</span><b id="sMove">—</b><span class="e" id="sMoveSub"></span></div>
-    <div class="stat ok"><span class="k">Gerekli</span><b id="sOk">—</b><span class="e" id="sOkSub"></span></div>
+    <div class="stat"><span class="k" data-i18n="kScanned">Taranan</span><b id="sTotal">—</b><span class="e" id="sTotalSub"></span></div>
+    <div class="stat bad"><span class="k" data-i18n="kBad">Gereksiz</span><b id="sBad">—</b><span class="e" id="sBadSub"></span></div>
+    <div class="stat warn"><span class="k" data-i18n="kWarn">Kısmen</span><b id="sWarn">—</b><span class="e" id="sWarnSub"></span></div>
+    <div class="stat move"><span class="k" data-i18n="kMove">Taşınabilir</span><b id="sMove">—</b><span class="e" id="sMoveSub"></span></div>
+    <div class="stat ok"><span class="k" data-i18n="kOk">Gerekli</span><b id="sOk">—</b><span class="e" id="sOkSub"></span></div>
   </section>
 
   <nav class="tabs">
-    <button class="tab active" data-tab="browse">Gezgin</button>
-    <button class="tab" data-tab="opps">Temizlik Fırsatları <span class="pill" id="oppCount">0</span></button>
+    <button class="tab active" data-tab="browse" data-i18n="tabBrowse">Gezgin</button>
+    <button class="tab" data-tab="opps"><span data-i18n="tabOpps">Temizlik Fırsatları</span> <span class="pill" id="oppCount">0</span></button>
   </nav>
 
   <section class="panel" id="browsePanel">
     <div class="toolbar">
       <div class="crumbs" id="crumbs"></div>
-      <input class="search" id="search" placeholder="Bu görünümde ara…" aria-label="Bu görünümde ara">
+      <input class="search" id="search" data-i18n-ph="searchBrowse" data-i18n-label="searchBrowse" placeholder="Bu görünümde ara…" aria-label="Bu görünümde ara">
     </div>
     <div class="chips" id="chips"></div>
     <div class="tablewrap">
       <table class="grid">
         <thead>
           <tr>
-            <th class="c"><input type="checkbox" id="selAll" aria-label="Görünen tümünü seç"></th>
-            <th>Ad</th>
-            <th class="r">Boyut</th>
-            <th class="r">Dosya</th>
-            <th>Karar</th>
-            <th>Açıklama</th>
+            <th class="c"><input type="checkbox" id="selAll" data-i18n-label="selAll" aria-label="Görünen tümünü seç"></th>
+            <th data-i18n="thName">Ad</th>
+            <th class="r" data-i18n="thSize">Boyut</th>
+            <th class="r" data-i18n="thFiles">Dosya</th>
+            <th data-i18n="thVerdict">Karar</th>
+            <th data-i18n="thWhy">Açıklama</th>
           </tr>
         </thead>
         <tbody id="rows"></tbody>
       </table>
-      <div class="empty" id="browseEmpty" hidden>Taramayı başlatın ya da başka bir klasöre gidin.</div>
+      <div class="empty" id="browseEmpty" data-i18n="emptyBrowse" hidden>Taramayı başlatın ya da başka bir klasöre gidin.</div>
     </div>
   </section>
 
   <section class="panel" id="oppsPanel" hidden>
     <div class="toolbar">
-      <div class="crumbs"><span class="muted">Tüm sürücüde 50 MB üzeri, temizlenebilir / koşullu öğeler</span></div>
-      <input class="search" id="search2" placeholder="Fırsatlarda ara…" aria-label="Fırsatlarda ara">
+      <div class="crumbs"><span class="muted" data-i18n="oppsNote">Tüm sürücüde 50 MB üzeri, temizlenebilir / koşullu öğeler</span></div>
+      <input class="search" id="search2" data-i18n-ph="searchOpps" data-i18n-label="searchOpps" placeholder="Fırsatlarda ara…" aria-label="Fırsatlarda ara">
     </div>
     <div class="tablewrap">
       <table class="grid">
         <thead>
           <tr>
-            <th class="c"><input type="checkbox" id="selAll2" aria-label="Görünen tümünü seç"></th>
-            <th>Yol</th>
-            <th class="r">Boyut</th>
-            <th class="r">Dosya</th>
-            <th>Karar</th>
-            <th>Açıklama</th>
+            <th class="c"><input type="checkbox" id="selAll2" data-i18n-label="selAll" aria-label="Görünen tümünü seç"></th>
+            <th data-i18n="thPath">Yol</th>
+            <th class="r" data-i18n="thSize">Boyut</th>
+            <th class="r" data-i18n="thFiles">Dosya</th>
+            <th data-i18n="thVerdict">Karar</th>
+            <th data-i18n="thWhy">Açıklama</th>
           </tr>
         </thead>
         <tbody id="oppRows"></tbody>
       </table>
-      <div class="empty" id="oppEmpty" hidden>Henüz fırsat yok — önce tarama yapın.</div>
+      <div class="empty" id="oppEmpty" data-i18n="emptyOpps" hidden>Henüz fırsat yok — önce tarama yapın.</div>
     </div>
   </section>
 
   <footer class="actionbar">
-    <div class="selinfo"><b id="selCount">0</b> öğe · <b id="selSize">0 B</b> seçili</div>
+    <div class="selinfo"><b id="selCount">0</b> <span data-i18n="selUnit">öğe</span> · <b id="selSize">0 B</b> <span data-i18n="selPicked">seçili</span></div>
     <div class="actions">
-      <select id="mode" aria-label="Temizleme yöntemi">
-        <option value="recycle">Geri Dönüşüm Kutusuna Taşı (güvenli)</option>
-        <option value="delete">Kalıcı Sil</option>
+      <select id="mode" data-i18n-label="modeAria" aria-label="Temizleme yöntemi">
+        <option value="recycle" data-i18n="modeRecycle">Geri Dönüşüm Kutusuna Taşı (güvenli)</option>
+        <option value="delete" data-i18n="modeDelete">Kalıcı Sil</option>
       </select>
-      <button class="btn danger" id="cleanBtn" disabled>Temizle</button>
+      <button class="btn danger" id="cleanBtn" data-i18n="clean" disabled>Temizle</button>
     </div>
   </footer>
 </div>
 
 <div class="modal" id="modal" hidden>
   <div class="card">
-    <h2 id="mTitle">Emin misiniz?</h2>
+    <h2 id="mTitle" data-i18n="mTitle">Emin misiniz?</h2>
     <p id="mBody"></p>
     <div class="mActions">
-      <button class="btn ghost" id="mCancel">Vazgeç</button>
-      <button class="btn danger" id="mOk">Onayla</button>
+      <button class="btn ghost" id="mCancel" data-i18n="mCancel">Vazgeç</button>
+      <button class="btn danger" id="mOk" data-i18n="mOk">Onayla</button>
     </div>
   </div>
 </div>
